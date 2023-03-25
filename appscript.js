@@ -6,7 +6,11 @@ const MODEL_TYPE = "gpt-3.5-turbo"; //chatGPT model
 function onOpen() {
   DocumentApp.getUi().createMenu("ChatGPT")
       .addItem("Generate Prompt", "generatePrompt")
-      .addItem("Generate Linkedin Post", "generateIdeas")
+      .addItem("Generate sms for ...", "generateIdeas")
+      .addItem("Generate zillow for...", "generateIdeas")
+      .addItem("Generate Faceb.addItem(ook post for...", "generateIdeas")
+      .addItem("Generate email subjectline for...", "generateIdeas")
+      .addItem("Generate instagram post for...", "genrateIdeas")
       .addToUi();
 }
 
@@ -16,7 +20,11 @@ function generateIdeas() {
   const doc = DocumentApp.getActiveDocument();
   const selectedText = doc.getSelection().getRangeElements()[0].getElement().asText().getText();
   const body = doc.getBody();
-  const prompt = "Help me write 5 Linkedin post on " + selectedText;
+  const prompt = "Create me an sms for" + selectedText;
+  const prompt2 = "Create an zillow posting for" + selectedText;
+  const prompt3 = "Create an Facebook post for" + selectedText;
+  const prompt4 = "Create an email subjectline for" + selectedText;
+  const prompt5 ="Create an instagram post for" + selectedText;
   const temperature = 0;
   const maxTokens = 2060;
 
